@@ -1,6 +1,6 @@
 # for git setting
 - block:
-  - name: Install necessary package for git complile
+  - name: Install necessary packages for git complile
     yum:
       name:
       - wget

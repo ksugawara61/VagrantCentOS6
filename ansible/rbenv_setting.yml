@@ -1,0 +1,34 @@
+# for rbenv setting
+- block:
+  - name: Install necessary packages for rbenv compile
+    yum:
+      name:
+      - gcc
+      - gcc-c++
+      - openssl-devel
+      - readline-devel
+      state: latest
+  - block:
+    - name: Clone rbenv repository
+      git:
+        repo: git://github.com/sstephenson/rbenv.git
+        dest: "{{ rbenv_root }}"
+        depth: 1
+    - name: Clone ruby-build repository in rbenv
+      git:
+        repo: https://github.com/sstephenson/ruby-build.git
+        dest: "{{ rbenv_root }}/plugins/ruby-build"
+        depth: 1
+    - name: Clone rbenv-gemset repository in rbenv
+      git:
+        repo: git://github.com/jf/rbenv-gemset.git
+        dest: "{{ rbenv_root }}/plugins/rbenv-gemset"
+        depth: 1
+    - name: Register rbenv path in bash_profile
+      shell: echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+    - name: Register rbenv init command in bash_profile
+      shell: echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    vars:
+      rbenv_root: "~/.rbenv"
+    become: yes
+    become_user: vagrant

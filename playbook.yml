@@ -4,3 +4,4 @@
   tasks:
     - include: ./ansible/default_setting.yml
     - include: ./ansible/git_setting.yml
+    - include: ./ansible/rbenv_setting.yml
