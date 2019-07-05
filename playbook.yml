@@ -3,7 +3,9 @@
   become: yes
   tasks:
     - include: ./ansible/default_setting.yml
-    - include: ./ansible/mysql_setting.yml
     - include: ./ansible/git_setting.yml
     - include: ./ansible/rbenv_setting.yml
     - include: ./ansible/node_setting.yml
+    - include: ./ansible/mysql_setting.yml
+    - include: ./ansible/redis_setting.yml
+    - include: ./ansible/memcached_setting.yml

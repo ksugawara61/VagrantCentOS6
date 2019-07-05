@@ -1,0 +1,10 @@
+# for redis setting
+- block:
+  - name: Install package redis
+    yum:
+      name: http://rpms.remirepo.net/enterprise/6/remi/x86_64//redis-5.0.5-1.el6.remi.x86_64.rpm
+  - name: Run redis service
+    service:
+      name: redis
+      state: started
+      enabled: yes

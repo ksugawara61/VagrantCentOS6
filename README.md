@@ -35,7 +35,9 @@ CentOS上に以下のミドルウェアをインストールしています。
 | rbenv | latest | rubyパッケージ管理 |
 | nvm | latest | nodeパッケージ管理 |
 | node | latest(LTS) | nodeパッケージ管理 |
-
+| MySQL | 5.7 | Relational Database |
+| Redis | 5.0.5 | KVS |
+| Memcached | 1.5.16 | KVS |
 
 ### 共有ディレクトリ
 
