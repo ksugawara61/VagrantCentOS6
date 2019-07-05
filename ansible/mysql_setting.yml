@@ -1,0 +1,15 @@
+# for mysql setting
+- block:
+  - name: Install package mysql57 community release
+    yum:
+      name: http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
+  - name: Enable mysql57-community release
+    shell: yum-config-manager --enable mysql57-community
+  - name: Install package mysql community server
+    yum:
+      name: mysql-community-server
+  - name: Run mysqld service
+    service:
+      name: mysqld
+      state: started
+      enabled: yes

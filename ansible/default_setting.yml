@@ -1,7 +1,8 @@
 # for default setting
 - block:
   - name: Install package epel-release
-    yum: name=https://dl.fedoraproject.org/pub/epel/6/x86_64/Packages/e/epel-release-6-8.noarch.rpm
+    yum:
+      name: https://dl.fedoraproject.org/pub/epel/6/x86_64/Packages/e/epel-release-6-8.noarch.rpm
   - name: Install standard package
     yum:
       name:

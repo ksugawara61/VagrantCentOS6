@@ -78,3 +78,4 @@ $ vagrant destroy
 3. Ansible Documentation, https://docs.ansible.com/, Online; accessed 18-June-2019.
 4. git_git_ Git Source Code Mirror - This is a publish-only repository and all pull requests are ignored. Please follow Documentation_SubmittingPatches procedure for any of your improvements., https://github.com/git/git, Online; accessed 18-June-2019.
 5. nvm + Node.js + npmのインストール - Qiita, https://qiita.com/sansaisoba/items/242a8ba95bf70ba179d3, Online; accessed 5-July-2019.
+6. MySQL __ A Quick Guide to Using the MySQL Yum Repository, https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/, Online; accessed 6-July-2019.
