@@ -2,7 +2,7 @@
 
 ## 概要
 
-Vagrant上でDockerの検証可能なサンプル環境です。<br>
+Vagrant上で検証可能なサンプル環境です。<br>
 OSはCentOSを採用しています。
 
 ## 設定パラメータ
@@ -20,7 +20,7 @@ Vagrantfileファイル内の以下の変数を変更することでサーバ（
 
 | 項目 | バージョン |
 | :--- | :--- |
-| CentOS | 7.6.1810 |
+| CentOS | 6.10 |
 
 ### ミドルウェア
 
@@ -31,9 +31,11 @@ CentOS上に以下のミドルウェアをインストールしています。
 | Vim | latest | エディタ |
 | wget | latest | ダウンローダ |
 | htop | latest | タスクマネージャ |
-| git | latest | バージョン管理ツール |
-| Docker | 18.06.3-ce | コンテナツール |
-| Docker Compose | 1.24.0 | 複数のコンテナを定義・実行するツール |
+| git | 2.22.0 | バージョン管理ツール |
+| rbenv | latest | rubyパッケージ管理 |
+| nvm | latest | nodeパッケージ管理 |
+| node | latest(LTS) | nodeパッケージ管理 |
+
 
 ### 共有ディレクトリ
 
@@ -75,3 +77,4 @@ $ vagrant destroy
 2. 【Linux】タイムゾーン(Timezone)の変更 - Qiita, https://qiita.com/azusanakano/items/b39bd22504313884a7c3, Online; accessed 18-June-2019.
 3. Ansible Documentation, https://docs.ansible.com/, Online; accessed 18-June-2019.
 4. git_git_ Git Source Code Mirror - This is a publish-only repository and all pull requests are ignored. Please follow Documentation_SubmittingPatches procedure for any of your improvements., https://github.com/git/git, Online; accessed 18-June-2019.
+5. nvm + Node.js + npmのインストール - Qiita, https://qiita.com/sansaisoba/items/242a8ba95bf70ba179d3, Online; accessed 5-July-2019.
