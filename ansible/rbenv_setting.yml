@@ -35,9 +35,14 @@
       shell: echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
     - name: Register rbenv init command in bash_profile
       shell: echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    - name: Install ruby using rbenv
+      shell: source ~/.bash_profile; \
+             rbenv install {{ ruby_version }}; \
+             rbenv global {{ ruby_version }};
     vars:
       rbenv_root: "~/.rbenv"
       rbenv_version: v1.1.2
       ruby_build_version: v20190615
+      ruby_version: 2.5.1
     become: yes
     become_user: vagrant
