@@ -16,14 +16,16 @@
   - block:
     - name: Clone rbenv repository
       git:
-        repo: git://github.com/sstephenson/rbenv.git
+        repo: git://github.com/rbenv/rbenv.git
         dest: "{{ rbenv_root }}"
         depth: 1
+        version: "{{ rbenv_version }}"
     - name: Clone ruby-build repository in rbenv
       git:
-        repo: https://github.com/sstephenson/ruby-build.git
+        repo: git://github.com/rbenv/ruby-build.git
         dest: "{{ rbenv_root }}/plugins/ruby-build"
         depth: 1
+        version: "{{ ruby-build_version }}"
     - name: Clone rbenv-gemset repository in rbenv
       git:
         repo: git://github.com/jf/rbenv-gemset.git
@@ -35,5 +37,7 @@
       shell: echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
     vars:
       rbenv_root: "~/.rbenv"
+      rbenv_version: v1.1.2
+      ruby-build_version: v20190615
     become: yes
     become_user: vagrant
