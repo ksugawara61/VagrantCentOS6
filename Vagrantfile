@@ -9,6 +9,7 @@ $node_ip = "172.16.1.170"
 $node_hostname = "node001"
 $node_vm_memory = 2048
 $node_vm_cpus = 3
+$node_port_array = [80, 443, 3000]
 
 Vagrant.configure(VAGRANT_API_VERSION) do |config|
 
@@ -32,9 +33,9 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
   end
 
   config.vm.hostname = $node_hostname
-  config.vm.network "forwarded_port", guest: 80,  host: 80
-  config.vm.network "forwarded_port", guest: 443, host: 443
-  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  $node_port_array.each do |port|
+    config.vm.network "forwarded_port", guest: port, host: port
+  end
   config.vm.network "private_network", ip: $node_ip
 
   config.vm.synced_folder "./dev", "/home/vagrant/dev", owner: "vagrant", group: "vagrant"
